@@ -1,4 +1,4 @@
-# backend-transaction
+# Backend Transaction
 #  Descripción
 Backend para gestionar las transacciones de una cuenta de Tenpista. Permite a los usuarios listar, registrar, editar y eliminar transacciones, las cuales contienen detalles como el monto, el comercio, el nombre de Tenpista y la fecha de la transacción.
 
