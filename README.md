@@ -6,23 +6,6 @@ Backend para gestionar las transacciones de una cuenta de Tenpista. Permite a lo
 Primero, clona el repositorio en tu máquina local:
 git clone https://github.com/ivegas7/backend-transaction.git
 
-# Verificar si tienes Maven (Windows)
-Descargar Maven:
-- Ve a la página oficial de Maven: https://maven.apache.org/download.cgi.
-- Descarga el archivo ZIP de la última versión estable.
-
- Configurar las variables de entorno:
-- Extrae el archivo descargado a una ubicación en tu sistema (por ejemplo, C:\Program Files\Apache\Maven).
-- Agrega las siguientes variables de entorno: (Propiedades del sistema)
-- Agregar variable con el nombre "MAVEN_HOME"
-  MAVEN_HOME: Con la ruta al directorio donde extrajiste Maven (por ejemplo, C:\Program Files\Apache\Maven\apache-maven-3.x.x).
-- Seleccionar "path" -> editar -> nuevo
-  Agregar -> %MAVEN_HOME%\bin
-
-# Ejecutar MVN
-- En la carpeta raiz del proyecto clonado ejecutar lo siguiente:
- ./mvnw spring-boot:run
-
 # Ejecutar los Contenedores con Docker Composer
 
 Descargar, instalar y ejecutar docker (https://docs.docker.com/desktop/setup/install/windows-install/)
