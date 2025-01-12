@@ -24,7 +24,9 @@ Descargar Maven:
  ./mvnw spring-boot:run
 
 # Ejecutar los Contenedores con Docker Composer
-Este proyecto está configurado para ejecutarse con Docker y Docker Compose. Para levantar los contenedores de la base de datos PostgreSQL
+
+Descargar, instalar y ejecutar docker (https://docs.docker.com/desktop/setup/install/windows-install/)
+Este proyecto está configurado para ejecutarse con Docker y Docker Compose.
 Este comando construirá imagenes los contenedores de Docker y los pondrá en marcha : 
 docker-compose up --build
 
