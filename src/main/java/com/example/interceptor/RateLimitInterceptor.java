@@ -21,10 +21,12 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // Excluir el endpoint GET /allTransactions del rate limiting
-        if (request.getMethod().equals("GET") && request.getRequestURI().equals("/api/transaction/allTransactions")) {
-            return true; // No aplicar limitación a este endpoint
-        }
+        // Excluir el endpoint GET /allTransactions, swagger del rate limiting
+    	 if ((request.getMethod().equals("GET") && 
+    	         (request.getRequestURI().equals("/api/transaction/allTransactions") || 
+    	          request.getRequestURI().startsWith("/swagger-ui/")))) {
+    	        return true; 
+    	    }
 
         // Obtener la dirección IP del cliente y la ruta de la solicitud
         String clientIp = request.getRemoteAddr();
