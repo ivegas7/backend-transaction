@@ -1,6 +1,5 @@
 # Etapa de compilación
-# FROM eclipse-temurin:17-jdk AS builder
-FROM eclipse-temurin:23.0.1_11-jdk AS builder
+FROM eclipse-temurin:21.0.5_11-jdk AS builder
 WORKDIR /backend
 
 # Instalar Maven
@@ -14,10 +13,14 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa de producción
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21.0.5_11-jdk
 WORKDIR /apbackendp
 
-# Copiar el archivo JAR generado
+# Configurar zona horaria a Chile
+ENV TZ=America/Santiago
+RUN apt-get update && apt-get install -y tzdata
+
+# Copiar el archivo JAR generado desde la etapa de compilación
 COPY --from=builder /backend/target/*.jar backend.jar
 
 # Comando para ejecutar la aplicación
