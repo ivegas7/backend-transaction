@@ -78,7 +78,7 @@ class TransactionControllerTest {
 
     @Test
     void testDeleteTransaction() throws Exception {
-    	// Configura mock para que cuando se llame al método deleteTransaction, no realice ninguna acción (doNothing())
+    	// Configura mock para que cuando se llame al método deleteTransaction, no realice ninguna acción
         doNothing().when(transactionService).deleteTransaction(anyInt());
         // Realiza una solicitud DELETE a "/transaction/1" para eliminar la transacción con ID 1
         mockMvc.perform(delete("/transaction/1"))

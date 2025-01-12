@@ -7,18 +7,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.example.interceptor.RateLimitInterceptor;
 
-//Políticas de CORS
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
+    //Políticas de CORS
     //Permitir o denegar el acceso de un dominio a recursos de otro dominio.
-    
+  
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")  // Asegúrate de que sea el path correcto
-                .allowedOrigins("http://localhost:3000")  // Permite solicitudes desde el frontend
+        registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:3000")  
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  
-                .allowedHeaders("*");  // Puedes restringir los encabezados 
+                .allowedHeaders("*"); 
     }
     
     
@@ -31,7 +32,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(rateLimitInterceptor)
-                .addPathPatterns("/api/**"); // Apply interceptor to all /api/* endpoints
+                .addPathPatterns("/api/**");
     }
     
     

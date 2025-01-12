@@ -62,7 +62,7 @@ public class TransactionController {
             service.deleteTransaction(id);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } catch (ResourceNotFoundException e) {
-            throw e; // Lanza la excepción para que se maneje en un controlador de excepciones global.
+            throw e; 
         } catch (Exception e) {
             throw new RuntimeException("Internal error occurred during transaction deletion.");
         }
